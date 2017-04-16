@@ -51,4 +51,32 @@ INT *lee_polinomio (INT grado)
 		printf("Pulse S/s para continuar, u otra tecla para reescribir\n");
 
 
-}while(salida != 's' || salida != 'S');
+	}while(salida != 's' || salida != 'S');
+
+	return (ptr);
+}
+
+/*Función que calcula el resultado de un polinomio para un determinado
+ *valor de X.
+ */
+
+INT evalua_polinomio (INT* polinomio, INT grado, INT x)
+{
+	INT i = 0, j = 0; 						//Índices
+	LONG suma = 0, producto = 1; 			//Valor de retorno y variable para hallar potencias
+
+	for (i = (grado); i > 0; i--){			//Se lleva la cuenta de en qué elemento del vector se encuentra
+		for (j = i; j > 0; j--){			//Acceso a elemento del vector
+			producto *= x;					//Se calcula x elevado a su potencia
+		}
+		producto *= polinomio[i];			//Se multiplica por el coeficiente de polinomio[]
+		suma += producto;					//Se almacena en suma
+		producto = 1;						//Se retorna a producto a 1 para futuros cálculos.
+	}
+
+	suma += polinomio[0];
+
+	return (suma);
+}
+
+	
