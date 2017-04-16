@@ -21,7 +21,7 @@ INT *lee_polinomio (INT grado)
 	printf("el valor sea negativo, introduzca el coeficiente\n");
 	printf("de manera explicita, (-4)\n");
 
-	do{
+
 		for(i = (grado); i > 1; i--){
 			printf("\ncoeficiente de x^%d : \t",i);
 			scanf("%d",&ptr[i]);
@@ -41,17 +41,12 @@ INT *lee_polinomio (INT grado)
 		printf("\n¿Está bien así?:");
 
 		for(i = (grado); i > 1; i--){
-			printf("%d x^%d *",ptr[i],i+1);
+			printf(" %dx^%d *",ptr[i],i+1);
 		}
 
 		printf("%dx",ptr[1]);
-		printf("%d",ptr[0]);
+		printf("%d\n",ptr[0]);
 
-		puts("");
-		printf("Pulse S/s para continuar, u otra tecla para reescribir\n");
-	scanf("%c%*c",&salida);
-
-	}while(salida != 's' && salida != 'S');
 
 	return (ptr);
 }

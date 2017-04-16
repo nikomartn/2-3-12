@@ -30,6 +30,7 @@ INT main (void)
 
 	printf("El resultado es: %d",evalua_polinomio(polinomio,grado,x));
 
+	free (polinomio);
 	return 0;
 }
 
