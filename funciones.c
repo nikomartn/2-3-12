@@ -23,7 +23,7 @@ INT *lee_polinomio (INT grado)
 
 	do{
 		for(i = (grado); i > 1; i--){
-			printf("\ncoeficiente de x^%d : \t",i+1);
+			printf("\ncoeficiente de x^%d : \t",i);
 			scanf("%d",&ptr[i]);
 			/*Si el polinomio por ejemplo es de grado 3, será un
 			 *vector de (3+1) = 4 elementos. Por lo que hay que acceder desde
@@ -41,7 +41,7 @@ INT *lee_polinomio (INT grado)
 		printf("\n¿Está bien así?:");
 
 		for(i = (grado); i > 1; i--){
-			printf("%dx^%d",ptr[i],i+1);
+			printf("%d x^%d *",ptr[i],i+1);
 		}
 
 		printf("%dx",ptr[1]);
@@ -49,9 +49,9 @@ INT *lee_polinomio (INT grado)
 
 		puts("");
 		printf("Pulse S/s para continuar, u otra tecla para reescribir\n");
+	scanf("%c%*c",&salida);
 
-
-	}while(salida != 's' || salida != 'S');
+	}while(salida != 's' && salida != 'S');
 
 	return (ptr);
 }
